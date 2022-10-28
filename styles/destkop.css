@@ -1,0 +1,121 @@
+@media only screen and (min-width: 1024px) {
+  /* Error Page */
+  .world-icon {
+    width: 20em;
+    height: 20em;
+  }
+
+  /* Navbar */
+  header {
+    margin-bottom: 2em;
+  }
+
+  .nav {
+    padding: 0.8em 0;
+  }
+
+  .nav > h1 {
+    font-size: 1.3em;
+  }
+
+  .links > ul {
+    margin-right: 3em;
+  }
+
+  .links > ul > li {
+    margin-right: 1.5em;
+  }
+
+  .links > ul > li:last-child {
+    margin: 0;
+  }
+
+  .links > ul > li > a {
+    font-size: 1em;
+  }
+
+  /* Main Page */
+  .input-group {
+    height: 3em;
+  }
+
+  .input-group > * {
+    font-size: 1em;
+  }
+
+  .countries-div {
+    margin-top: 1em;
+  }
+
+  .card {
+    width: 16em;
+    height: 21em;
+    margin: 2em;
+  }
+
+  .card > img {
+    height: 10em;
+  }
+
+  .card-body > h5 {
+    margin-bottom: 0.8em;
+    font-size: 1.2em;
+  }
+
+  .card-body > div > * {
+    margin-bottom: 0.3em;
+    font-size: 0.9em;
+  }
+
+  /* Current Country Page */
+  .country-div {
+    padding-bottom: 2em;
+    margin-top: 5em;
+  }
+
+  .return-back {
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+  }
+
+  .flag > img:first-child {
+    width: 32em;
+  }
+
+  .flag > img:last-child {
+    height: 10em;
+    width: 9.5em;
+    margin-left: 2em;
+  }
+
+  .country-info > h1 {
+    font-size: 2.5em;
+    margin-top: 0;
+  }
+
+  .country-info > p {
+    font-size: 1.2em;
+  }
+
+  .country-map {
+    margin-top: 2em;
+  }
+
+  #map {
+    width: 100%;
+    height: 40em;
+  }
+
+  /* About Us */
+  .about-us-div > h1 {
+    font-size: 2.7em;
+  }
+
+  .about-us-div > p {
+    font-size: 1.3em;
+  }
+
+  .about-footer > p {
+    font-size: 1.1em;
+  }
+}

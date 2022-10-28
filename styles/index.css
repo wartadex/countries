@@ -1,0 +1,429 @@
+/* Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap");
+
+/* Css Variables */
+:root {
+  /* Colors */
+  --dark-blue: #2b3945;
+  --very-dark-blue: #202c37;
+  --shadow: #0000004d;
+  --very-dark-blue-text: #111517;
+  --dark-gray: #e6e6e6;
+  --very-light-gray: #ededed;
+  --white: #ffffff;
+  --loader: #365774;
+
+  /* Sizes */
+  --width-of-switch: 3.5em;
+  --height-of-switch: 2em;
+  --size-of-icon: 1.4em;
+  --slider-offset: 0.3em;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 800;
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+
+.text-bold {
+  font-weight: 700;
+}
+
+/* Error Page */
+.world-icon {
+  animation: rotation 15s infinite linear;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Loader */
+.loader-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+  width: 4em;
+  height: 4em;
+}
+
+.loader:before,
+.loader:after {
+  content: "";
+  position: absolute;
+  border-radius: 100%;
+  border: 0.8em solid transparent;
+  border-top-color: var(--loader);
+}
+
+.loader:before {
+  z-index: 100;
+  animation: spin 1s infinite;
+}
+
+.loader:after {
+  border: 0.8em solid #bdc6d1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Navbar */
+header {
+  box-shadow: 0 0 1em -0.4em var(--shadow);
+}
+
+.links > ul {
+  margin-bottom: 0;
+  list-style-type: none;
+}
+
+.links > ul > li > a {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+}
+
+.nav-border {
+  width: 0;
+  height: 2px;
+  border-radius: 30px;
+  transition: 0.6s;
+}
+
+.nav-border-active {
+  width: 100%;
+}
+
+.links > ul > li:hover .nav-border {
+  width: 100%;
+}
+
+.switch {
+  position: relative;
+  width: var(--width-of-switch);
+  height: var(--height-of-switch);
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--very-light-gray);
+  box-shadow: 0 0 0.3em -0.1em var(--shadow) inset;
+  transition: 0.4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--size-of-icon, 1.4em);
+  width: var(--size-of-icon, 1.4em);
+  border-radius: 20px;
+  left: var(--slider-offset, 0.3em);
+  top: 50%;
+  transform: translateY(-50%);
+  background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--very-dark-blue);
+}
+
+input:checked + .slider:before {
+  left: calc(100% - (var(--size-of-icon, 1.4em) + var(--slider-offset, 0.3em)));
+  background: var(--very-dark-blue);
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -4px 0 0 #a3dafb;
+}
+
+/* Main Page */
+.input-group {
+  border-radius: 10px;
+}
+
+.input-group > * {
+  border: none;
+  font-weight: 700;
+}
+
+.input-group > input:focus {
+  background-color: inherit;
+  box-shadow: none;
+  color: inherit;
+}
+
+.card {
+  border: none;
+  cursor: pointer;
+  transition: transform 0.8s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-body {
+  border-top-width: 1px;
+  border-top-style: solid;
+}
+
+.card-body > *,
+.card-body > div > * {
+  margin: 0;
+}
+
+ul.pagination > li > span {
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+/* Current Country Page */
+.return-back {
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 0.5em;
+}
+
+.flag > img:first-child,
+#map {
+  border-radius: 0.8em;
+  box-shadow: 0 0 2em -1em var(--shadow);
+}
+
+/* About Us */
+.about-footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.about-footer > p {
+  font-weight: 600;
+}
+
+/* --------------- Website Themes --------------- */
+
+/* Background Dark */
+.background-dark,
+.background-dark .active {
+  background-color: var(--very-dark-blue) !important;
+  color: var(--white) !important;
+}
+
+/* Navbar */
+.background-dark header {
+  background-color: var(--dark-blue);
+}
+
+.background-dark .nav-border {
+  background-color: hsla(0, 0%, 100%, 0.548) !important;
+}
+
+.background-dark .nav-border-active {
+  background-color: var(--white) !important;
+}
+
+/* Main Page */
+.input-group-dark {
+  box-shadow: 0 0 1em 0 var(--shadow);
+}
+
+.input-group-dark > * {
+  background-color: var(--dark-blue);
+  color: var(--white);
+}
+
+.input-group-dark > span > i {
+  color: var(--white);
+}
+
+.input-group-dark > input:focus {
+  background-color: var(--dark-blue);
+}
+
+.input-group-dark > button:hover,
+.input-group-dark > button:focus,
+.input-group-dark > button:active {
+  background-color: var(--very-dark-blue) !important;
+  color: var(--white) !important;
+}
+
+.input-group-dark > .dropdown-menu {
+  background-color: var(--dark-blue);
+  box-shadow: 0 0 1.5em 0 var(--shadow);
+}
+
+.input-group-dark > .dropdown-menu > li {
+  color: var(--white);
+}
+
+.input-group-dark > .dropdown-menu > li:hover,
+.input-group-dark > .dropdown-menu > li:active {
+  background-color: hsl(207, 23%, 26%);
+}
+
+.card-dark {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  box-shadow: 0 0 1em 0 var(--shadow);
+}
+
+.card-dark > .card-body {
+  border-top-color: var(--dark-blue) !important;
+}
+
+.background-dark ul.pagination > li > span {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border: 1px solid var(--very-dark-blue);
+}
+
+.background-dark .pagination span:hover {
+  background-color: hsl(203, 26%, 14%);
+}
+
+.background-dark .pagination .active > span {
+  background-color: hsl(208, 26%, 11%);
+}
+
+/* Current Country Page */
+.background-dark .return-back {
+  background-color: var(--dark-blue);
+  color: var(--white);
+  box-shadow: 0 0 1em -0.4em var(--shadow);
+}
+
+/* Background Light */
+.background-light,
+.background-light .active {
+  background-color: var(--very-light-gray) !important;
+  color: var(--very-dark-blue-text) !important;
+}
+
+/* Navbar */
+.background-light header {
+  background-color: var(--white);
+}
+
+.background-light .nav-border {
+  background-color: hsla(208, 23%, 16%, 0.507) !important;
+}
+
+.background-light .nav-border-active {
+  background-color: var(--very-dark-blue) !important;
+}
+
+/* Main Page */
+.input-group-light {
+  box-shadow: 0 0 1em -0.4em var(--shadow);
+}
+
+.input-group-light > * {
+  background-color: var(--white);
+  color: var(--very-dark-blue-text);
+}
+
+.input-group-light > span > i {
+  color: var(--very-dark-blue-text);
+}
+
+.input-group-light > input:focus {
+  background-color: var(--white);
+}
+
+.input-group-light > button:hover,
+.input-group-light > button:focus,
+.input-group-light > button:active {
+  background-color: var(--dark-gray) !important;
+  color: var(--very-dark-blue-text) !important;
+}
+
+.input-group-light > .dropdown-menu {
+  background-color: var(--white);
+  box-shadow: 0 0 1em 0 var(--shadow);
+}
+
+.input-group-light > .dropdown-menu > li {
+  color: var(--very-dark-blue-text);
+}
+
+.input-group-light > .dropdown-menu > li:hover,
+.input-group-light > .dropdown-menu > li:active {
+  background-color: var(--very-light-gray);
+}
+
+.card-light {
+  background-color: var(--white);
+  color: var(--very-dark-blue-text);
+  box-shadow: 0 0 1em -0.4em var(--shadow);
+}
+
+.card-light > .card-body {
+  border-top-color: var(--dark-gray) !important;
+}
+
+.background-light ul.pagination > li > span {
+  background-color: var(--white);
+  color: var(--very-dark-blue-text);
+  border: 1px solid var(--very-light-gray);
+}
+
+.background-light .pagination span:hover {
+  background-color: hsl(0, 0%, 90%);
+}
+
+.background-light .pagination .active > span {
+  background-color: hsl(0, 0%, 85%);
+}
+
+/* Current Country Page */
+.background-light .return-back {
+  background-color: var(--white);
+  color: var(--very-dark-blue-text);
+  box-shadow: 0 0 1em -0.4em var(--shadow);
+}
