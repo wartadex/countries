@@ -1,9 +1,6 @@
-/* Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap");
 
-/* Css Variables */
 :root {
-  /* Colors */
   --dark-blue: #2b3945;
   --very-dark-blue: #202c37;
   --shadow: #0000004d;
@@ -13,7 +10,6 @@
   --white: #ffffff;
   --loader: #365774;
 
-  /* Sizes */
   --width-of-switch: 3.5em;
   --height-of-switch: 2em;
   --size-of-icon: 1.4em;
@@ -120,7 +116,7 @@ header {
   width: 0;
   height: 2px;
   border-radius: 30px;
-  transition: 0.6s;
+  transition: 0.4s;
 }
 
 .nav-border-active {

@@ -11,11 +11,15 @@
   }
 
   .nav {
-    padding: 0.8em 0;
+    padding: 24px;
+    margin: 0;
   }
 
   .nav > h1 {
-    font-size: 1.3em;
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+    color: rgb(17 21 23);
+    font-weight: 600;
   }
 
   .links > ul {
