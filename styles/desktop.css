@@ -13,13 +13,15 @@
   .nav {
     padding: 24px;
     margin: 0;
+    height: 108px;
   }
 
   .nav > h1 {
     font-size: 1.875rem;
     line-height: 2.25rem;
     color: rgb(17 21 23);
-    font-weight: 600;
+    font-weight: 800;
+    transform: translateX(-290px);
   }
 
   .links > ul {
