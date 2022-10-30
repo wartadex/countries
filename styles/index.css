@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@600&display=swap');
 
 :root {
   --dark-blue: #2b3945;
@@ -17,7 +18,7 @@
 }
 
 body {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Oakes", sans-serif;
   font-weight: 400;
 }
 
@@ -98,6 +99,10 @@ h6 {
 /* Navbar */
 header {
   box-shadow: 0 0 1em -0.4em var(--shadow);
+}
+
+.rest {
+  transform: translateX(118px);
 }
 
 .links > ul {
@@ -241,6 +246,29 @@ ul.pagination > li > span {
   font-weight: 600;
 }
 
+.information {
+  font-size: 25px;
+}
+
+.earth {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.author {
+  display: flex;
+  align-items: center;
+}
+
+.male {
+  width: 30px;
+  height: 30px;
+  margin-bottom: 1rem;
+}
+
 /* --------------- Website Themes --------------- */
 
 /* Background Dark */
@@ -261,6 +289,17 @@ ul.pagination > li > span {
 
 .background-dark .nav-border-active {
   background-color: var(--white) !important;
+}
+
+.nav {
+  transform: translateY(-8px);
+}
+
+.nav > h1 {
+  font-family: 'Oakes', sans-serif;
+  font-size: 1.875rem;
+  transform: translateX(-284.255px);
+  letter-spacing: 0.0005px;
 }
 
 /* Main Page */
@@ -422,3 +461,10 @@ ul.pagination > li > span {
   color: var(--very-dark-blue-text);
   box-shadow: 0 0 1em -0.4em var(--shadow);
 }
+
+@font-face {
+  font-family: "Oakes"; 
+  src: url("./../fonts/Oakes\ Grotesk\ SemiBold.ttf") format("truetype"); 
+  font-style: normal; 
+  font-weight: normal; 
+  } 

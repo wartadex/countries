@@ -194,10 +194,10 @@ if (document.querySelector("#home")) {
   // Dropdown List
   const dropdownList = [
     "All",
-    "Asia",
     "Africa",
     "Americas",
     "Antarctic",
+    "Asia",
     "Europe",
     "Oceania"
   ]
@@ -325,7 +325,7 @@ if (document.querySelector("#home")) {
 
         setTimeout(() => renderCurrentCountry(), timer)
 
-        document.title = `Where In The World? || ${apiData.name.common}`
+        document.title = `Country's Information | ${apiData.name.common}`
       } else {
         apiData = []
       }

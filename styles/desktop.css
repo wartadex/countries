@@ -1,3 +1,9 @@
+@media screen and (max-width: 1400px) {
+  .nav > h1 {
+    transform: translateX(-200px);
+  }
+}
+
 @media only screen and (min-width: 1024px) {
   /* Error Page */
   .world-icon {
@@ -14,13 +20,6 @@
     padding: 24px;
     margin: 0;
     height: 108px;
-  }
-
-  .nav > h1 {
-    font-size: 1.875rem;
-    line-height: 2.25rem;
-    font-weight: 800;
-    transform: translateX(-290px);
   }
 
   .links > ul {
