@@ -10,7 +10,8 @@ const timer = 1000
 
 // Api Fetching Data Function
 const fetchData = async (key, apiKey) => {
-  let endpoint;
+  let endpoint
+
   switch (key) {
     case "All":
       endpoint = `https://restcountries.com/v3.1/${apiKey}`
@@ -30,18 +31,22 @@ const fetchData = async (key, apiKey) => {
 
       throw new Error(message)
     }
+
     const data = await response.json()
 
     return data
   } catch (err) {
     console.error(err.message)
 
-    document.querySelector("main").innerHTML = `<main>
+    document.querySelector("main").innerHTML = 
+    `
+    <main>
       <div class="container d-flex flex-column justify-content-start align-items-center">
         <img class="mb-5 world-icon" src="../assets/images/world-dark.png" alt="world-icon" />
         <h1 class="error">${err.message}</h1>
       </div>
-    </main>`
+    </main>
+    `
   }
 }
 
@@ -121,10 +126,9 @@ if (document.querySelector("#home")) {
 
         div.classList = `card card-light`
 
-        div.innerHTML = `
-        <img src=${flags.png} class="${
-          flags.png === undefined ? "d-none" : "card-img-top"
-        }" alt="${name.official}-flag" />
+        div.innerHTML = 
+        `
+        <img src=${flags.png} class="${flags.png === undefined ? "d-none" : "card-img-top"}" alt="${name.official}-flag" />
         <div class="card-body d-flex flex-column justify-content-center">
           <h5>${name.common === undefined ? "No Data" : name.common}</h5>
           <div class="description">
@@ -132,13 +136,16 @@ if (document.querySelector("#home")) {
               population === undefined
                 ? "No Data"
                 : population.toLocaleString("en-US")
-            }</p>
+            }
+            </p>
             <p><strong class="text-bold">Region:</strong> ${
               region === undefined ? "No Data" : region
-            }</p>
+            }
+            </p>
             <p><strong class="text-bold">Capital:</strong> ${
               capital !== undefined ? capital[0] : "No Data"
-            }</p>
+            }
+            </p>
           </div>
         </div>
         `
@@ -351,63 +358,102 @@ if (document.querySelector("#home")) {
     } = apiData
 
     if (apiData.length !== []) {
-      countryDiv.innerHTML = `
-          <div class="col-lg-7 flag d-flex justify-content-start align-items-start">
-            <img class="${flags.svg === undefined ? "d-none" : ""}" src=${
-        flags.svg
-      } alt="${name.official}-flag" title="${name.common} Flag" />
-            <img width="100" height="100" class="${
-              coatOfArms.svg === undefined ? "d-none" : ""
-            }" src=${coatOfArms.svg} alt="${
-        name.official
-      }-coat-of-arms" title="${name.common} Coat Of Arms"/>
-          </div>
-
-          <div
-            class="col-lg-5 country-info d-flex flex-column justify-content-center"
-          >
-            <h1 class="country-name">${
-              name.common === undefined ? "No Data" : name.common
-            }</h1>
-            <p><strong class="text-bold">Area:</strong> ${
-              area === undefined ? "No Data" : area.toLocaleString("en-US")
-            }(Km²)</p>
-            <p><strong class="text-bold">Native Name:</strong> ${
-              name.nativeName === undefined
-                ? "No Data"
-                : Object.values(name.nativeName)[0].common
-            }</p>
-            <p><strong class="text-bold">Population:</strong> ${
-              population === undefined
-                ? "No Data"
-                : population.toLocaleString("en-US")
-            }</p>
-            <p><strong class="text-bold">Region:</strong> ${
-              region === undefined ? "No Data" : region
-            }</p>
-            <p><strong class="text-bold">Sub Region:</strong> ${
-              subregion === undefined ? "No Data" : subregion
-            }</p>
-            <p><strong class="text-bold">Capital:</strong> ${
-              capital !== undefined ? capital[0] : "No Data"
-            }</p>
-            <p><strong class="text-bold">Country Sign:</strong> ${
-              altSpellings === undefined ? "No Data" : altSpellings[0]
-            }</p>
-            <p><strong class="text-bold">Currencies:</strong> ${
-              currencies === undefined
-                ? "No Data"
-                : Object.values(currencies)[0].name + " - "
-            } ${
-        currencies === undefined ? "" : Object.values(currencies)[0].symbol
-      }</p>
-            <p><strong class="text-bold">Languages:</strong> ${
-              languages === undefined
-                ? "No Data"
-                : Object.values(languages).map((lang) => lang)
-            }</p>
+      countryDiv.innerHTML = 
+      `
+        <div class="col-lg-7 flag d-flex justify-content-start align-items-start">
+          <img 
+            class="${flags.svg === undefined ? "d-none" : ""}" 
+            src=${flags.svg} 
+            alt="${name.official}-flag" 
+            title="${name.common} Flag" 
+          />
+          <img 
+            width="100" 
+            height="100" 
+            class="${coatOfArms.svg === undefined ? "d-none" : ""}" 
+            src=${coatOfArms.svg} 
+            alt="${name.official}-coat-of-arms" 
+            title="${name.common} Coat Of Arms"
+          />
         </div>
-
+        <div class="col-lg-5 country-info d-flex flex-column justify-content-center">
+          <h1 class="country-name">${name.common === undefined ? "No Data" : name.common}</h1>
+          <p>
+            <strong class="text-bold">Area:</strong> 
+            ${
+              area === undefined 
+              ? "No Data" 
+              : area.toLocaleString("en-US")} km²
+          </p>
+          <p>
+            <strong class="text-bold">Native Name:</strong> 
+            ${
+              name.nativeName === undefined
+              ? "No Data"
+              : Object.values(name.nativeName)[0].common
+            }
+          </p>
+          <p>
+            <strong class="text-bold">Population:</strong> 
+            ${
+              population === undefined
+              ? "No Data"
+              : population.toLocaleString("en-US")
+            }
+          </p>
+          <p>
+            <strong class="text-bold">Region:</strong> 
+            ${
+              region === undefined 
+              ? "No Data" 
+              : region
+            }
+          </p>
+          <p>
+            <strong class="text-bold">Sub Region:</strong> 
+            ${
+              subregion === undefined 
+              ? "No Data" 
+              : subregion
+            }
+          </p>
+          <p>
+            <strong class="text-bold">Capital:</strong> 
+            ${
+              capital !== undefined 
+              ? capital[0] 
+              : "No Data"
+            }
+          </p>
+          <p>
+            <strong class="text-bold">Country Sign:</strong> 
+            ${altSpellings === undefined 
+              ? "No Data" 
+              : altSpellings[0]
+            }
+          </p>
+          <p>
+           <strong class="text-bold">Currencies:</strong>
+            ${
+              currencies === undefined
+              ? "No Data"
+              : Object.values(currencies)[0].name + " - "
+            } 
+            ${
+              currencies === undefined 
+              ? "" 
+              : Object.values(currencies)[0].symbol
+            }
+          </p>
+          <p>
+           <strong class="text-bold">Languages:</strong>
+            ${
+              languages === undefined
+              ? "No Data"
+              : Object.values(languages).map((lang) => lang)
+            }
+          </p>
+        </div>
         <div class="country-map col-lg-12 d-flex justify-content-center align-items-center">
           <div id='map'></div>
         </div>
